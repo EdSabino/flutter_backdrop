@@ -133,9 +133,12 @@ class Backdrop extends StatefulWidget {
   /// Defaults to [NavigationToolbar.kMiddleSpacing].
   final double appBarTitleSpacing;
 
+  final GlobalKey key;
+
   Backdrop({
     @required this.frontLayer,
     @required this.backLayer,
+    @required this.key,
     this.frontHeader,
     this.borderRadius,
     this.shape,
@@ -172,9 +175,9 @@ class Backdrop extends StatefulWidget {
 class _BackdropState extends State<Backdrop>
     with SingleTickerProviderStateMixin {
   bool isPanelVisible;
-  final _backDropKey = GlobalKey(debugLabel: 'Backdrop');
   AnimationController _controller;
   bool test;
+  GlobalKey<ScaffoldState> _backDropKey;
 
   _BackdropState({this.test = false});
 
@@ -251,6 +254,7 @@ class _BackdropState extends State<Backdrop>
 
   @override
   Widget build(BuildContext context) {
+    _backDropKey ??= widget.key;
     return LayoutBuilder(
       builder: (context, constraints) {
         final panelSize = constraints.biggest;
