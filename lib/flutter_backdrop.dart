@@ -138,7 +138,7 @@ class Backdrop extends StatefulWidget {
   Backdrop({
     @required this.frontLayer,
     @required this.backLayer,
-    this.scaffoldKey,
+    @required this.scaffoldKey,
     this.frontHeader,
     this.borderRadius,
     this.shape,
@@ -266,6 +266,7 @@ class _BackdropState extends State<Backdrop>
 
         return Scaffold(
           backgroundColor: Colors.white,
+          key: widget.scaffoldKey,
           body: Container(
             key: _backDropKey,
             child: Stack(
