@@ -31,6 +31,7 @@ class BackdropPanel extends StatelessWidget {
     return Padding(
       padding: padding,
       child: Material(
+        color: Colors.white,
         elevation: 12.0,
         borderRadius: borderRadius,
         shape: shape,

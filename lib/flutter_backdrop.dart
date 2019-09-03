@@ -1,7 +1,5 @@
 library flutter_backdrop;
 
-import 'dart:web_gl';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_backdrop/backdrop_panel.dart';
 import 'dart:async';
@@ -20,6 +18,8 @@ class Backdrop extends StatefulWidget {
   /// This widget should contain your title which will appear above [frontLayer].
   /// Remember to modify it properly if you are using [shape] or [borderRadius] mentioned below.
   final Widget frontHeader;
+
+  final Widget bottomNavigation;
 
   /// This decides the height of [frontHeader].
   /// Provide 0.0 if you don't want it.
@@ -144,6 +144,7 @@ class Backdrop extends StatefulWidget {
     this.frontPanelPadding = EdgeInsets.zero,
     this.panelVisibleInitially = true,
     this.toggleFrontLayer = false,
+    this.bottomNavigation,
 
     //--------Appbar properties------------
     this.appBarLeadingMenuIcon,
@@ -291,6 +292,7 @@ class _BackdropState extends State<Backdrop>
               ],
             ),
           ),
+          bottomNavigationBar: widget.bottomNavigation
         );
       },
     );
