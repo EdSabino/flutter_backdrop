@@ -1,7 +1,5 @@
 library flutter_backdrop;
 
-import 'dart:web_gl';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_backdrop/backdrop_panel.dart';
 import 'dart:async';
