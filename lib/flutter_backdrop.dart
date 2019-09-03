@@ -177,7 +177,7 @@ class _BackdropState extends State<Backdrop>
   bool isPanelVisible;
   AnimationController _controller;
   bool test;
-  GlobalKey _backDropKey;
+  final _backDropKey = GlobalKey(debugLabel: 'backdrop');
 
   _BackdropState({this.test = false});
 
@@ -254,7 +254,6 @@ class _BackdropState extends State<Backdrop>
 
   @override
   Widget build(BuildContext context) {
-    _backDropKey ??= widget.key;
     return LayoutBuilder(
       builder: (context, constraints) {
         final panelSize = constraints.biggest;
@@ -267,6 +266,7 @@ class _BackdropState extends State<Backdrop>
 
         return Scaffold(
           backgroundColor: Colors.white,
+          key: widget.key,
           body: Container(
             key: _backDropKey,
             child: Stack(
