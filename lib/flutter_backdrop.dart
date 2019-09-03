@@ -249,15 +249,8 @@ class _BackdropState extends State<Backdrop>
       return null;
   }
 
-  _waitBeforeToggle() async {
-    await Future.delayed(const Duration(milliseconds: 100), () {
-      _toggleBackdropPanelVisibility();
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    if(widget.toggleFrontLayer) _waitBeforeToggle();
     return LayoutBuilder(
       builder: (context, constraints) {
         final panelSize = constraints.biggest;
