@@ -133,12 +133,12 @@ class Backdrop extends StatefulWidget {
   /// Defaults to [NavigationToolbar.kMiddleSpacing].
   final double appBarTitleSpacing;
 
-  final GlobalKey key;
+  final GlobalKey scaffoldKey;
 
   Backdrop({
     @required this.frontLayer,
     @required this.backLayer,
-    @required this.key,
+    @required this.scaffoldKey,
     this.frontHeader,
     this.borderRadius,
     this.shape,
@@ -266,7 +266,7 @@ class _BackdropState extends State<Backdrop>
 
         return Scaffold(
           backgroundColor: Colors.white,
-          key: widget.key,
+          key: widget.scaffoldKey,
           body: Container(
             key: _backDropKey,
             child: Stack(
