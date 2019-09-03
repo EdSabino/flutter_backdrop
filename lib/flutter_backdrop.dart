@@ -1,5 +1,7 @@
 library flutter_backdrop;
 
+import 'dart:web_gl';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_backdrop/backdrop_panel.dart';
 import 'dart:async';
@@ -266,18 +268,7 @@ class _BackdropState extends State<Backdrop>
             .animate(_controller.view);
 
         return Scaffold(
-          appBar: AppBar(
-            leading: appBarMenuButton(),
-            automaticallyImplyLeading: widget.appBarAutomaticallyImplyLeading,
-            title: widget.appBarTitle,
-            actions: widget.appBarActions,
-            elevation: 0.0,
-            backgroundColor: widget.appBarBackgroundColor,
-            iconTheme: widget.appBarIconTheme,
-            textTheme: widget.appBarTextTheme,
-            centerTitle: widget.appBarCenterTitle,
-            titleSpacing: widget.appBarTitleSpacing,
-          ),
+          backgroundColor: Colors.white,
           body: Container(
             key: _backDropKey,
             child: Stack(
