@@ -177,7 +177,7 @@ class _BackdropState extends State<Backdrop>
   bool isPanelVisible;
   AnimationController _controller;
   bool test;
-  GlobalKey<ScaffoldState> _backDropKey;
+  GlobalKey _backDropKey;
 
   _BackdropState({this.test = false});
 
