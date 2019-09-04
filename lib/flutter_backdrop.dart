@@ -135,6 +135,8 @@ class Backdrop extends StatefulWidget {
 
   final GlobalKey scaffoldKey;
 
+  final Widget drawer;
+
   Backdrop({
     @required this.frontLayer,
     @required this.backLayer,
@@ -148,6 +150,7 @@ class Backdrop extends StatefulWidget {
     this.panelVisibleInitially = true,
     this.toggleFrontLayer = false,
     this.bottomNavigation,
+    this.drawer,
 
     //--------Appbar properties------------
     this.appBarLeadingMenuIcon,
@@ -267,6 +270,7 @@ class _BackdropState extends State<Backdrop>
         return Scaffold(
           backgroundColor: Colors.white,
           key: widget.scaffoldKey,
+          drawer: widget.drawer,
           body: Container(
             key: _backDropKey,
             child: Stack(
